@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/materialize.min.css" type="text/css">
+  <!-- <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.min.css" type="text/css"> -->
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+  <title>To Do App</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="row">
+      <form class="col s10 offset-s1 card-panel yellow lighten-5">
+        <div class="app-title">to do app</div>
+        <div class="row input-wrapper">
+          <div class="input-field col s12 ">
+            <input id="task-input" type="text">
+            <label for="task-input" class="task-description">Task description</label>
+          </div>
+          <div class="input-field col s12 ">
+            <input placeholder="Deadline" type="text" class="datepicker">
+          </div>
+          <a class="add-task-btn waves-effect waves-light btn-small teal accent-4">Add task</a>
+        </div>
+      </form>
+
+      <div class="task-list-wrapper">
+        <div class="tasks-list col s10 offset-s1 card-panel yellow lighten-5">
+          <p class="task-list-header">Your tasks list: </p>
+          <ul class="tasks-list-content"></ul>
+          <div class="clear-btn-wrapper">
+            <a class="clear-btn waves-effect waves-light btn-small red lighten-1">Clear</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; Copyright Joanna Jeżewska & Marek Szczegodziński 2019</p>
+  </footer>
+
+
+  <script type="text/javascript" src="./js/materialize.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>

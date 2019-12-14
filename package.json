@@ -1,0 +1,40 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "Simple To Do App in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mszczegodzinski/To-Do-App.git"
+  },
+  "author": "Joanna Jeżewska, Marek Szczegodziński",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mszczegodzinski/To-Do-App/issues"
+  },
+  "homepage": "https://github.com/mszczegodzinski/To-Do-App#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bootstrap": "^4.4.1",
+    "config": "^3.2.4",
+    "debug": "^4.1.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "joi": "^14.3.1",
+    "joi-objectid": "^3.0.1",
+    "joi-password-complexity": "^3.1.0",
+    "lodash": "^4.17.15",
+    "materialize-css": "^1.0.0",
+    "mongoose": "^5.8.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "jshint": "^2.10.3"
+  }
+}
