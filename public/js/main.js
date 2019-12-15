@@ -6,6 +6,8 @@ const tasksList = [];
 const tasksListContent = document.querySelector(".tasks-list-content")
 const taskDescription = document.querySelector(".task-description");
 //adding tasks to list and form validation:
+let counter = 0
+
 addTaskBtn.addEventListener("click", e => {
   e.preventDefault();
   if (taskInput.value.length > 2 && dateInput.value.length > 0 && taskInput.value.length < 33) {
@@ -13,23 +15,35 @@ addTaskBtn.addEventListener("click", e => {
     tasksList.push(dateInput.value);
     taskInput.value = "";
     dateInput.value = "";
-    tasksListContent.textContent = "";
-    for (let i = 0; i < tasksList.length; i += 2) {
-      const task = document.createElement("li")
-      const taskParagraph = document.createElement("p")
-      taskParagraph.textContent = `${tasksList[i]}, ${tasksList[i+1]} `;
-      task.appendChild(taskParagraph);
-      const isTaskDone = document.createElement("label");
-      const inputCheckbox = document.createElement("input");
-      inputCheckbox.type = "checkbox";
-      inputCheckbox.className = "filled-in";
-      const checkboxDescription = document.createElement("span");
-      checkboxDescription.textContent = " "
-      isTaskDone.appendChild(inputCheckbox);
-      isTaskDone.appendChild(checkboxDescription);
-      tasksListContent.appendChild(task);
-      task.appendChild(isTaskDone);
+    if (counter === 0) {
+      tasksListContent.textContent = "";
     }
+
+    // for (let i = 0; i < tasksList.length; i += 2) {
+    const task = document.createElement("li")
+    const taskParagraph = document.createElement("p")
+    taskParagraph.textContent = `${tasksList[counter]}, ${tasksList[counter + 1]} `;
+    counter += 2;
+    task.appendChild(taskParagraph);
+    const isTaskDone = document.createElement("label");
+    const inputCheckbox = document.createElement("input");
+    inputCheckbox.type = "checkbox";
+    inputCheckbox.className = "filled-in";
+    //add line throught if checked:
+    inputCheckbox.addEventListener("click", () => {
+      if (inputCheckbox.checked) {
+        taskParagraph.style.textDecorationLine = "line-through";
+      } else {
+        taskParagraph.style.textDecorationLine = "none";
+      }
+    });
+    const checkboxDescription = document.createElement("span");
+    checkboxDescription.textContent = " "
+    isTaskDone.appendChild(inputCheckbox);
+    isTaskDone.appendChild(checkboxDescription);
+    tasksListContent.appendChild(task);
+    task.appendChild(isTaskDone);
+    // }
     // taskDescription.style.visibility = "visible";
     taskDescription.classList.remove("active");
   } else if ((taskInput.value.length < 3 || taskInput.value.length > 33) && dateInput.value.length > 0) {
@@ -40,11 +54,13 @@ addTaskBtn.addEventListener("click", e => {
     alert("Write Task description and set Deadline!");
   }
 });
+
 //add class active to input when focused:
 taskInput.addEventListener("focus", () => {
   taskDescription.classList.add("active");
   taskDescription.style.visibility = "visible";
 });
+
 
 //default tasks list content:
 if (tasksList.length === 0) {
@@ -58,6 +74,7 @@ clearBtn.addEventListener("click", e => {
   tasksList.length = 0;
   tasksListContent.textContent = "Your tasks list is empty";
   tasksListContent.style.textAlign = "center";
+  counter = 0;
 });
 
 //datepicker config:
