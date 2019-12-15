@@ -39,6 +39,17 @@ body {
   align-items: center;
 }
 
+.back-to-home-page {
+  margin: 0 auto 1rem auto;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.back-to-home-page:hover {
+  color: #0072a9;
+}
+
 .btn-small {
   margin: 0.5rem auto 1rem auto;
 }
