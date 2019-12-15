@@ -14,29 +14,36 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   width: 100%;
   min-height: 95vh;
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper .row {
   margin-bottom: 0
 }
 
-.sign-out-bar {
-  font-size: 0.9rem;
+.home-page-title {
+  margin: 1rem auto 1rem auto;
+  font-size: 1.6rem;
+  text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
-  text-align: right;
-  margin: 0 auto;
-  color: white;
 }
 
-.sign-out-bar a {
-  display: block;
-  padding: 0.5% 10%;
-  transition: 0.3s;
+.home-page-content-wrapper {
+  display: flex;
+  flex-direction: column;
+
 }
 
-.sign-out-bar a:hover{
-  color: #0072a9;
+.register-page-btn,
+.login-page-btn {
+  margin: 1rem auto 2rem auto;
+}
+
+.home-page-description {
+  margin: 1rem auto 0 auto;
 }
 
 .input-wrapper {
@@ -46,20 +53,6 @@ body {
   flex-direction: column;
 }
 
-.input-wrapper .input-field {
-  margin: 0 auto;
-}
-
-.input-field {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-small {
-  margin: 0.5rem auto 1rem auto;
-}
 
 .app-title {
   margin: 0.2rem 0 0.5rem 0;
@@ -106,8 +99,6 @@ body {
 .clear-btn-wrapper {
   margin: 0 auto;
 }
-
-
 
 
 .footer {
