@@ -19,7 +19,6 @@ addTaskBtn.addEventListener("click", e => {
       tasksListContent.textContent = "";
     }
 
-    // for (let i = 0; i < tasksList.length; i += 2) {
     const task = document.createElement("li")
     const taskParagraph = document.createElement("p")
     taskParagraph.textContent = `${tasksList[counter]}, ${tasksList[counter + 1]} `;
@@ -43,8 +42,7 @@ addTaskBtn.addEventListener("click", e => {
     isTaskDone.appendChild(checkboxDescription);
     tasksListContent.appendChild(task);
     task.appendChild(isTaskDone);
-    // }
-    // taskDescription.style.visibility = "visible";
+
     taskDescription.classList.remove("active");
   } else if ((taskInput.value.length < 3 || taskInput.value.length > 33) && dateInput.value.length > 0) {
     alert("Task description have to has between 3 and 33 characters!")

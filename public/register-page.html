@@ -17,18 +17,18 @@
         <div class="app-title">Register Page</div>
         <div class="row input-wrapper">
           <div class="input-field col s12 ">
-            <input id="task-input" type="text">
-            <label for="task-input" class="task-description">Email</label>
+            <input id="email" type="text">
+            <label for="email" class="task-description">Email</label>
           </div>
           <div class="input-field col s12 ">
-            <input id="task-input" type="password">
-            <label for="task-input" class="task-description">Password</label>
+            <input id="password" type="password">
+            <label for="password" class="task-description">Password</label>
           </div>
           <div class="input-field col s12 ">
-            <input id="task-input" type="password">
-            <label for="task-input" class="task-description">Repeated password</label>
+            <input id="repassword" type="password">
+            <label for="repassword" class="task-description">Repeated password</label>
           </div>
-          <a class="add-task-btn waves-effect waves-light btn-small red lighten-1">Sign Up</a>
+          <a class="sign-up-btn waves-effect waves-light btn-small red lighten-1">Sign Up</a>
           <a href="./index.html" class="back-to-home-page">Back</a>
         </div>
       </form>
@@ -42,6 +42,45 @@
 
   <script type="text/javascript" src="./js/materialize.min.js"></script>
   <script type="text/javascript" src="./js/main.js"></script>
+
+  <script>
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const repassword = document.getElementById("repassword");
+    const signUpBtn = document.querySelector(".sign-up-btn");
+
+    // if (email.value === "" || password.value === "" || repassword === "") {
+    //   alert("Fill in all inputs!");
+    // }
+
+    const saveValueOnChange = e => e.target.value;
+
+    email.addEventListener("change", saveValueOnChange);
+    password.addEventListener("change", saveValueOnChange);
+    repassword.addEventListener("change", saveValueOnChange);
+
+    signUpBtn.addEventListener("click", () => {
+      let regForm = {
+        email: email.value,
+        password: password.value,
+      }
+
+      if (password.value === repassword.value) {
+        fetch(`http://localhost:3000/api/users`, {
+          method: 'POST',
+          body: JSON.stringify(regForm), // data can be `string` or {object}!
+          headers: { 'Content-Type': 'application/json' }
+        })
+          .then((data) => {
+            console.log("register success", data)
+          })
+          .catch(err => console.log("register error"));
+      }
+    })
+
+
+
+  </script>
 </body>
 
 </html>
